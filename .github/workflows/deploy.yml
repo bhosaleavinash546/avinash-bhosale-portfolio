@@ -1,7 +1,7 @@
 name: Deploy portfolio to GitHub Pages
 
 # Builds the Vite app and publishes it to GitHub Pages on every push to main.
-# The build job self-enables Pages (Source: GitHub Actions) — no manual toggle needed.
+# One-time setup: Settings → Pages → Build and deployment → Source: "GitHub Actions".
 
 on:
   push:
@@ -26,10 +26,6 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - name: Enable GitHub Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - run: npm ci
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
