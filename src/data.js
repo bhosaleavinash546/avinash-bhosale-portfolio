@@ -23,7 +23,7 @@ export const profile = {
   email: 'bhosale.avinash546@gmail.com',
   linkedin: 'https://www.linkedin.com/in/avinash-bhosale-671bbb80',
   eyebrow: 'Value & Cost Engineering · Automotive',
-  headline: 'I take cost out of vehicles, not value.',
+  headline: 'I take cost out of Products, not value.',
   lead:
     'For over 13 years I’ve helped bring down the cost of cars, across chassis and propulsion, from petrol engines right through to fully electric. I do it with value engineering, should-costing and benchmarking against the competition. Lately I’ve also been building my own AI tools to make this kind of work a lot faster.',
   belief: 'Most cost problems are really value problems.',
