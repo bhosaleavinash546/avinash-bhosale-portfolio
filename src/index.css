@@ -82,6 +82,7 @@ img { display: block; max-width: 100%; }
 
 /* ---------- Section shell ---------- */
 .section { padding-block: clamp(60px, 8vw, 104px); position: relative; }
+:where(section[id], div[id]) { scroll-margin-top: 82px; }
 .section-paper { background: var(--bg-paper); border-block: 1px solid var(--border-soft); }
 .section-head { margin-bottom: clamp(30px, 4vw, 52px); max-width: 64ch; }
 .section-eyebrow {

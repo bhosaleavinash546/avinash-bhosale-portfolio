@@ -37,6 +37,7 @@ export default function Approach() {
               <span><i className="curve-dot" style={{ background: '#16395e' }} /> Cost committed</span>
               <span><i className="curve-dot" style={{ background: '#9a6f23' }} /> Ability to influence</span>
             </div>
+            <p className="curve-foot">A long-established value-engineering principle — the basis for intervening at concept and design.</p>
           </Reveal>
 
           <Reveal delay={0.1}>

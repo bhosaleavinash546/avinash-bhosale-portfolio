@@ -87,25 +87,15 @@ export const experience = [
     ],
   },
   {
-    role: 'Senior Design Engineer',
+    role: 'Design Engineer → Senior Design Engineer',
     company: 'Tata Technologies',
     location: 'Pune, India',
-    period: 'Aug 2019 — Jun 2021',
-    scope: 'VAVE, competitive teardown & benchmarking, product design',
+    period: 'Jul 2012 — Jun 2021',
+    scope: 'Nine years growing from mechanical design into VAVE & should-costing',
     points: [
-      'Delivered VAVE and cost-reduction programmes backed by strong analytical rigour.',
-      'Performed competitive teardown & benchmarking and applied should-costing to product design.',
-      'Designed products across manufacturing processes with end-to-end project management.',
-    ],
-  },
-  {
-    role: 'Design Engineer',
-    company: 'Tata Technologies',
-    location: 'Pune, India',
-    period: 'Jul 2012 — Jun 2019',
-    scope: 'Nine-year foundation in mechanical design engineering',
-    points: [
-      'Grew from Design Engineer into senior value & cost engineering roles over nine years at Tata Technologies.',
+      'Progressed over nine years from Design Engineer to Senior Design Engineer, moving from product design into value & cost engineering.',
+      'Delivered VAVE and cost-reduction programmes with competitive teardown & benchmarking and should-costing awareness.',
+      'Designed products across manufacturing processes with strong analytical rigour and end-to-end project management.',
     ],
   },
 ]

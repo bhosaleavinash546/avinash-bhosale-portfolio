@@ -63,8 +63,8 @@ export default function Hero() {
               className="hero-photo"
               src={profile.photo}
               alt={`${profile.name}, ${profile.role}`}
-              width="520"
-              height="650"
+              width="320"
+              height="320"
               fetchpriority="high"
             />
           ) : (
@@ -77,6 +77,7 @@ export default function Hero() {
               <p>Propulsion cost optimisation · Gaydon, UK</p>
             </div>
           </div>
+          <span className="hero-availability">Open to senior VAVE &amp; cost-engineering roles</span>
         </motion.div>
       </div>
     </section>
