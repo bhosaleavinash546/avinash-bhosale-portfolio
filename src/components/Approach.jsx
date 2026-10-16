@@ -15,11 +15,12 @@ export default function Approach() {
       <div className="container">
         <div className="section-head">
           <Reveal>
-            <span className="section-eyebrow"><Compass size={13} /> Approach &amp; Method</span>
-            <h2 className="section-title">Cost is committed long before it is spent</h2>
+            <span className="section-eyebrow"><Compass size={13} /> How I work</span>
+            <h2 className="section-title">Most of the cost is decided early</h2>
             <p className="section-sub">
-              70–80% of a product’s cost is locked in by the end of design — yet most cost reviews
-              happen after. My work moves the intervention upstream, where influence is highest.
+              By the time a design is finished, 70 to 80% of a product’s cost is already locked in.
+              Most cost reviews happen later, when there’s far less you can change. I try to get
+              involved early, while there’s still room to make a real difference.
             </p>
           </Reveal>
         </div>
@@ -28,7 +29,7 @@ export default function Approach() {
           <Reveal className="panel curve-card">
             <div className="curve-head">
               <h3>The cost-commitment curve</h3>
-              <p>Why value engineering belongs at concept and design</p>
+              <p>Why it pays to get involved early</p>
             </div>
             <Suspense fallback={<ChartSkeleton />}>
               <CostCurve />
@@ -37,7 +38,7 @@ export default function Approach() {
               <span><i className="curve-dot" style={{ background: '#16395e' }} /> Cost committed</span>
               <span><i className="curve-dot" style={{ background: '#9a6f23' }} /> Ability to influence</span>
             </div>
-            <p className="curve-foot">A long-established value-engineering principle — the basis for intervening at concept and design.</p>
+            <p className="curve-foot">This is a well-known idea in value engineering, not a number of my own. It’s the reason I push to get involved at concept and design.</p>
           </Reveal>
 
           <Reveal delay={0.1}>

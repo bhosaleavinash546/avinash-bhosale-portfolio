@@ -14,8 +14,8 @@ export default function Recommendations() {
             <span className="section-eyebrow"><MessageSquareQuote size={13} /> Recommendations</span>
             <h2 className="section-title">What colleagues and mentors say</h2>
             <p className="section-sub">
-              <Linkedin size={15} style={{ verticalAlign: '-2px' }} /> Verbatim from LinkedIn
-              recommendations by managers, mentors and teammates across Tata Technologies and beyond.
+              Taken word for word from LinkedIn recommendations by people I’ve worked with and for,
+              at Tata Technologies and beyond.
             </p>
           </Reveal>
         </div>

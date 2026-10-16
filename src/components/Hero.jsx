@@ -41,7 +41,7 @@ export default function Hero() {
               View selected work <ArrowUpRight size={16} />
             </a>
             <a className="btn btn-ghost" href="#ai-tools">
-              Explore AI tools
+              See the AI tools
             </a>
           </motion.div>
 
@@ -73,8 +73,8 @@ export default function Hero() {
           <div className="hero-nowcard">
             <span className="now-dot" />
             <div>
-              <strong>Now — {profile.company}</strong>
-              <p>Propulsion cost optimisation · Gaydon, UK</p>
+              <strong>Now at {profile.company}</strong>
+              <p>Propulsion cost, Gaydon UK</p>
             </div>
           </div>
           <span className="hero-availability">Open to senior VAVE &amp; cost-engineering roles</span>

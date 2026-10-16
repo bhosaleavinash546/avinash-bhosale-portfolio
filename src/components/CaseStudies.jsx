@@ -10,10 +10,10 @@ export default function CaseStudies() {
         <div className="section-head">
           <Reveal>
             <span className="section-eyebrow"><Layers size={13} /> Selected Work</span>
-            <h2 className="section-title">Cost-out programmes, end to end</h2>
+            <h2 className="section-title">Some of the work I’ve done</h2>
             <p className="section-sub">
-              A look at how I run value-engineering work — the problem, the method applied, and the
-              outcome delivered to engineering leadership.
+              A few examples of how I work: the problem in front of me, what I actually did about it,
+              and what came out of it.
             </p>
           </Reveal>
         </div>
@@ -37,7 +37,7 @@ export default function CaseStudies() {
 
               <div className="work-right">
                 <div>
-                  <p className="work-block-label">Approach</p>
+                  <p className="work-block-label">What I did</p>
                   <ul className="work-approach">
                     {c.approach.map((a) => (
                       <li key={a}>{a}</li>
@@ -45,7 +45,7 @@ export default function CaseStudies() {
                   </ul>
                 </div>
                 <div>
-                  <p className="work-block-label">Outcome</p>
+                  <p className="work-block-label">The result</p>
                   <div className="work-outcome">
                     <p>{c.outcome}</p>
                   </div>

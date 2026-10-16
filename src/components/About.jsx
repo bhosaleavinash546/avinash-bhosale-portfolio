@@ -21,7 +21,7 @@ export default function About() {
         <div className="section-head" style={{ marginTop: 'clamp(44px,6vw,76px)' }}>
           <Reveal>
             <span className="section-eyebrow"><UserRound size={13} /> About</span>
-            <h2 className="section-title">Engineering value, not just cutting cost</h2>
+            <h2 className="section-title">How I think about cost</h2>
           </Reveal>
         </div>
 

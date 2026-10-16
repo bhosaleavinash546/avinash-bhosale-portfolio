@@ -20,11 +20,10 @@ export default function Insights() {
         <div className="section-head">
           <Reveal>
             <span className="section-eyebrow"><Newspaper size={13} /> Insights</span>
-            <h2 className="section-title">Value Engineering, shared publicly</h2>
+            <h2 className="section-title">Things I’ve shared on LinkedIn</h2>
             <p className="section-sub">
-              A LinkedIn series on where cost really lives in a product — plus the SAVE
-              International certification behind the method. Hover to pause; click to view full size,
-              or open the original post on LinkedIn.
+              A short series I posted about where cost really hides in a product, plus my SAVE
+              certification. Hover to pause, or click to open the original post.
             </p>
           </Reveal>
         </div>

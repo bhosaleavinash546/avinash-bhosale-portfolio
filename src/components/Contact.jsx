@@ -8,10 +8,10 @@ export default function Contact() {
       <div className="container">
         <Reveal className="contact-card">
           <span className="section-eyebrow"><Send size={13} /> Contact</span>
-          <h2 className="contact-title">Let’s engineer more value together</h2>
+          <h2 className="contact-title">Let’s talk</h2>
           <p className="contact-copy">
-            Open to senior value & cost engineering roles and collaboration on AI-driven cost
-            intelligence across the automotive industry.
+            I’m open to senior value and cost engineering roles, and I’m always happy to chat about
+            using AI in cost work. Drop me a line.
           </p>
           <div className="contact-actions">
             <a className="btn btn-primary" href={`mailto:${profile.email}`}>

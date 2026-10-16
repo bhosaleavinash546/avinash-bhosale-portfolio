@@ -11,12 +11,12 @@ export default function AITools() {
       <div className="container">
         <div className="section-head">
           <Reveal>
-            <span className="section-eyebrow"><Cpu size={13} /> AI Cost-Intelligence Tools</span>
-            <h2 className="section-title">Platforms I’ve designed and built</h2>
+            <span className="section-eyebrow"><Cpu size={13} /> AI tools I’ve built</span>
+            <h2 className="section-title">Tools I’ve built myself</h2>
             <p className="section-sub">
-              Self-built AI platforms and multi-agent systems that convert engineering data — images,
-              CAD, drawings, PCB layouts, quotations and cost data — into actionable cost and value
-              insight in a fraction of the traditional time.
+              These are AI tools I’ve built on my own. They take engineering inputs like images, CAD,
+              drawings, PCB layouts and supplier quotes, and work out cost and value a lot quicker
+              than doing it all by hand.
             </p>
           </Reveal>
         </div>
@@ -24,9 +24,9 @@ export default function AITools() {
         <Reveal className="ai-pipeline">
           <span className="ai-pipe-step"><FileInput size={16} /> Engineering inputs</span>
           <span className="ai-pipe-arrow">→</span>
-          <span className="ai-pipe-step"><Sparkles size={16} /> Multi-agent AI engine</span>
+          <span className="ai-pipe-step"><Sparkles size={16} /> AI does the heavy lifting</span>
           <span className="ai-pipe-arrow">→</span>
-          <span className="ai-pipe-step"><FileOutput size={16} /> Cost &amp; value insight</span>
+          <span className="ai-pipe-step"><FileOutput size={16} /> Cost and value insight</span>
         </Reveal>
 
         <div className="ai-grid">
@@ -44,7 +44,7 @@ export default function AITools() {
               >
                 <div className="ai-card-top">
                   <span className="ai-icon"><Icon size={22} /></span>
-                  {t.featured && <span className="ai-badge">&lt; 60 s should-cost</span>}
+                  {t.featured && <span className="ai-badge">under a minute</span>}
                 </div>
                 <h3 className="ai-name">{t.name}</h3>
                 <p className="ai-kind">{t.kind}</p>

@@ -10,10 +10,10 @@ export default function Experience() {
         <div className="section-head">
           <Reveal>
             <span className="section-eyebrow"><Briefcase size={13} /> Experience</span>
-            <h2 className="section-title">A decade turning cost into value</h2>
+            <h2 className="section-title">Where I’ve worked</h2>
             <p className="section-sub">
-              Progressive roles across three global automotive engineering leaders — from mechanical
-              design to leading propulsion cost strategy.
+              Over a decade across three automotive companies, starting in mechanical design and
+              now leading propulsion cost work at JLR.
             </p>
           </Reveal>
         </div>
