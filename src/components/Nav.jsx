@@ -9,23 +9,18 @@ export default function Nav() {
   const [activeId, setActiveId] = useState('')
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
+    const onScroll = () => setScrolled(window.scrollY > 16)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Scroll-spy: highlight the nav link for the section currently in view.
   useEffect(() => {
-    const sections = nav
-      .map((n) => document.getElementById(n.id))
-      .filter(Boolean)
+    const sections = nav.map((n) => document.getElementById(n.id)).filter(Boolean)
     if (!sections.length) return
     const io = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+        const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)
         if (visible[0]) setActiveId(visible[0].target.id)
       },
       { rootMargin: '-45% 0px -50% 0px', threshold: [0, 0.25, 0.5, 1] },
@@ -37,9 +32,9 @@ export default function Nav() {
   return (
     <motion.header
       className={`nav-header ${scrolled ? 'is-scrolled' : ''}`}
-      initial={{ y: -80, opacity: 0 }}
+      initial={{ y: -70, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     >
       <nav className="container nav" aria-label="Primary">
         <a href="#top" className="brand">
@@ -53,11 +48,7 @@ export default function Nav() {
         <ul className="nav-links">
           {nav.map((n) => (
             <li key={n.id}>
-              <a
-                href={`#${n.id}`}
-                className={activeId === n.id ? 'active' : undefined}
-                aria-current={activeId === n.id ? 'true' : undefined}
-              >
+              <a href={`#${n.id}`} className={activeId === n.id ? 'active' : undefined} aria-current={activeId === n.id ? 'true' : undefined}>
                 {n.label}
               </a>
             </li>
@@ -68,25 +59,14 @@ export default function Nav() {
           Get in touch
         </a>
 
-        <button
-          className="nav-burger"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
+        <button className="nav-burger" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen((v) => !v)}>
+          {open ? <X size={21} /> : <Menu size={21} />}
         </button>
       </nav>
 
       <AnimatePresence>
         {open && (
-          <motion.ul
-            className="nav-mobile"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.28 }}
-          >
+          <motion.ul className="nav-mobile" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.26 }}>
             {nav.map((n) => (
               <li key={n.id}>
                 <a href={`#${n.id}`} onClick={() => setOpen(false)}>

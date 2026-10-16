@@ -4,8 +4,9 @@ import Hero from './components/Hero.jsx'
 import LogoStrip from './components/LogoStrip.jsx'
 import About from './components/About.jsx'
 import Experience from './components/Experience.jsx'
-import Expertise from './components/Expertise.jsx'
-import Projects from './components/Projects.jsx'
+import CaseStudies from './components/CaseStudies.jsx'
+import AITools from './components/AITools.jsx'
+import Approach from './components/Approach.jsx'
 import Insights from './components/Insights.jsx'
 import Recommendations from './components/Recommendations.jsx'
 import Contact from './components/Contact.jsx'
@@ -17,9 +18,7 @@ export default function App() {
 
   return (
     <>
-      <a className="skip-link" href="#about">
-        Skip to content
-      </a>
+      <a className="skip-link" href="#about">Skip to content</a>
       <motion.div className="scroll-progress" style={{ scaleX }} />
       <Nav />
       <main>
@@ -27,8 +26,9 @@ export default function App() {
         <LogoStrip />
         <About />
         <Experience />
-        <Expertise />
-        <Projects />
+        <CaseStudies />
+        <AITools />
+        <Approach />
         <Insights />
         <Recommendations />
         <Contact />

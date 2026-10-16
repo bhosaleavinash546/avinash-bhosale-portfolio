@@ -15,7 +15,7 @@ export default function Insights() {
   }, [])
 
   return (
-    <section className="section insights" id="insights">
+    <section className="section section-paper insights" id="insights">
       <div className="container">
         <div className="section-head">
           <Reveal>

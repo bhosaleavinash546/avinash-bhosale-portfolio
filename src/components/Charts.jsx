@@ -1,84 +1,50 @@
 import {
   ResponsiveContainer,
-  BarChart,
-  Bar,
+  ComposedChart,
+  Area,
+  Line,
   XAxis,
   YAxis,
   Tooltip,
-  Cell,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  Radar,
+  CartesianGrid,
 } from 'recharts'
-import { experienceChart, competencies } from '../data.js'
+import { costCurve } from '../data.js'
 
-const barColors = ['#5b8def', '#4fd1c5', '#c8a24a']
-
-function ChartTooltip({ active, payload, label, unit }) {
+function CurveTip({ active, payload, label }) {
   if (!active || !payload || !payload.length) return null
   return (
     <div className="chart-tip">
       <strong>{label}</strong>
-      <span>
-        {payload[0].value}
-        {unit}
-      </span>
+      {payload.map((p) => (
+        <span key={p.dataKey} style={{ color: p.color, display: 'block' }}>
+          {p.name}: {p.value}%
+        </span>
+      ))}
     </div>
   )
 }
 
-// Lazily loaded so the ~350KB Recharts bundle doesn't block first paint.
-export default function Charts() {
+// The canonical cost-commitment curve — an industry principle (70–80% of cost
+// committed by the end of design), not a self-rated metric.
+export default function CostCurve() {
   return (
-    <>
-      <div className="chart-head">
-        <h3>Tenure by organisation</h3>
-        <span className="text-soft">Years of experience</span>
-      </div>
-      <div className="chart-wrap">
-        <ResponsiveContainer width="100%" height={260}>
-          <BarChart data={experienceChart} margin={{ top: 8, right: 8, left: -18, bottom: 0 }}>
-            <XAxis
-              dataKey="org"
-              tick={{ fill: '#a7b0c2', fontSize: 12 }}
-              tickLine={false}
-              axisLine={{ stroke: '#212a3c' }}
-              interval={0}
-            />
-            <YAxis tick={{ fill: '#8791a5', fontSize: 12 }} tickLine={false} axisLine={false} />
-            <Tooltip cursor={{ fill: 'rgba(255,255,255,0.03)' }} content={<ChartTooltip unit=" yrs" />} />
-            <Bar dataKey="years" radius={[8, 8, 0, 0]} maxBarSize={64}>
-              {experienceChart.map((_, i) => (
-                <Cell key={i} fill={barColors[i % barColors.length]} />
-              ))}
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-    </>
-  )
-}
-
-export function CompetencyChart() {
-  return (
-    <>
-      <div className="chart-head">
-        <h3>Core competencies</h3>
-        <span className="text-soft">Self-assessed proficiency</span>
-      </div>
-      <div className="chart-wrap">
-        <ResponsiveContainer width="100%" height={260}>
-          <RadarChart data={competencies} outerRadius="72%">
-            <PolarGrid stroke="#212a3c" />
-            <PolarAngleAxis dataKey="area" tick={{ fill: '#a7b0c2', fontSize: 11 }} />
-            <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
-            <Radar dataKey="level" stroke="#c8a24a" fill="#c8a24a" fillOpacity={0.32} strokeWidth={2} />
-            <Tooltip content={<ChartTooltip unit="%" />} />
-          </RadarChart>
-        </ResponsiveContainer>
-      </div>
-    </>
+    <div className="curve-wrap">
+      <ResponsiveContainer width="100%" height={280}>
+        <ComposedChart data={costCurve} margin={{ top: 10, right: 22, left: 4, bottom: 0 }}>
+          <defs>
+            <linearGradient id="gCommitted" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#16395e" stopOpacity={0.22} />
+              <stop offset="100%" stopColor="#16395e" stopOpacity={0.02} />
+            </linearGradient>
+          </defs>
+          <CartesianGrid stroke="#eceae3" vertical={false} />
+          <XAxis dataKey="stage" tick={{ fill: '#515c6b', fontSize: 11.5 }} tickLine={false} axisLine={{ stroke: '#e5e2da' }} interval={0} tickMargin={8} />
+          <YAxis tick={{ fill: '#8a93a0', fontSize: 11 }} tickLine={false} axisLine={false} domain={[0, 100]} ticks={[0, 25, 50, 75, 100]} tickFormatter={(v) => `${v}%`} width={40} />
+          <Tooltip content={<CurveTip />} />
+          <Area type="monotone" dataKey="committed" name="Cost committed" stroke="#16395e" strokeWidth={2.5} fill="url(#gCommitted)" dot={{ r: 3, fill: '#16395e' }} />
+          <Line type="monotone" dataKey="influence" name="Ability to influence" stroke="#9a6f23" strokeWidth={2.5} strokeDasharray="5 4" dot={{ r: 3, fill: '#9a6f23' }} />
+        </ComposedChart>
+      </ResponsiveContainer>
+    </div>
   )
 }

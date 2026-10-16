@@ -3,7 +3,7 @@ import { Quote, Linkedin, MessageSquareQuote } from 'lucide-react'
 import { Reveal } from './motion.jsx'
 import { recommendations } from '../data.js'
 
-const avatarColors = ['var(--accent)', 'var(--cyan)', 'var(--blue)']
+const avatarColors = ['var(--navy)', 'var(--teal)', 'var(--gold)']
 
 export default function Recommendations() {
   return (
